@@ -11,10 +11,10 @@ is used and the mechanism to extend the timeout does not work.
 2. After the backend has started, perform a REST request: http://localhost:8086/test
    1. You will see this log line: Received REST request on /test with session _someId_
 3. Open [the sockjs client](src/test/resources/sockjsclient.html)
-   4. A web socket session will start, you will see this log line every 5 seconds: 
+   1. A web socket session will start, you will see this log line every 5 seconds: 
 Received WS request SOCKET_PING for session _someId_
-5. Wait 2 minutes (the timeout for the session)
-6. Perform the same REST request again: http://localhost:8086/test  
+4. Wait 2 minutes (the timeout for the session)
+5. Perform the same REST request again: http://localhost:8086/test  
 &rarr; You will see a different session id
 
 To see that it works with the local session store, redo all the steps with _useClusteredSessionStore=false_
